@@ -25,7 +25,10 @@ SECRET_KEY = '_rtctmz!7kjx84@$0e3q)$(en@roid9hwlg)!m+6e-(_s#v=+5'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '192.168.1.132',
+    'localhost'
+]
 
 
 # Application definition
@@ -40,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_filters',
     'corsheaders',
+    'users',
     'polls',
 ]
 
@@ -147,4 +151,7 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = (
     'localhost:8080',
     'localhost:8081',
+    '192.168.1.99',
 )
+
+AUTH_USER_MODEL = 'users.user'
