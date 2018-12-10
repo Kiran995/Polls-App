@@ -10,6 +10,7 @@ djangorestframework = "*"
 django-filter = "*"
 django-cors-headers = "*"
 djangorestframework-recursive = "*"
+djangorestframework-jwt = "*"
 
 [dev-packages]
 

@@ -18,6 +18,8 @@ from django.conf.urls import include
 from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
+from rest_framework_jwt.views import obtain_jwt_token
+from rest_framework_jwt.views import verify_jwt_token
 
 from polls import api
 
@@ -29,4 +31,6 @@ router.register('options', api.OptionAPIViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('web-api/v1/', include(router.urls)),
+    path('web-api/v1/token-auth/', obtain_jwt_token),
+    path('web-api/v1/token-verify/', verify_jwt_token)
 ]
