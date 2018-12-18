@@ -9,18 +9,24 @@ class PollAPIViewSet(viewsets.ModelViewSet):
     queryset = Poll.objects.all()
     serializer_class = PollSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('poll_name', 'id')
-
+    filter_fields = {
+        'poll_name' : ['icontains'],
+        'id' : ['exact']
+        }
+  
 class QuestionAPIViewSet(viewsets.ModelViewSet):
     permission_classes = []
     queryset = Question.objects.all()
     serializer_class = QuestionSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('id', 'poll')
+    filter_fields = {
+        'id' : ['exact'],
+        'poll' : ['icontains'],
+        'question' : ['icontains']
+        }
 
 class OptionAPIViewSet(viewsets.ModelViewSet):
     permission_classes = []
     queryset = Option.objects.all()
     serializer_class = OptionSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ('question', 'id')
