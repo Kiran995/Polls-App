@@ -27,6 +27,7 @@ router = DefaultRouter()
 router.register('polls', api.PollAPIViewSet)
 router.register('questions', api.QuestionAPIViewSet)
 router.register('options', api.OptionAPIViewSet)
+router.register('nestedPolls', api.NestedPollAPIViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

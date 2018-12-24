@@ -16,7 +16,8 @@ class Question(models.Model):
     question = models.CharField(max_length=100)
     poll = models.ForeignKey(
         Poll,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='questions'
     )
 
     def __str__(self):
@@ -31,7 +32,8 @@ class Option(models.Model):
     count = models.IntegerField(default=0)
     question = models.ForeignKey(
         Question,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='options'
     )
 
     def __str__(self):
