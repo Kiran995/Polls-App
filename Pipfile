@@ -11,6 +11,7 @@ django-filter = "*"
 django-cors-headers = "*"
 djangorestframework-recursive = "*"
 djangorestframework-jwt = "*"
+ipdb = "*"
 
 [dev-packages]
 
