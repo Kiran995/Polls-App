@@ -1,2 +1,4 @@
 Poll_Django/settings/env.py
 venv/
+Poll_Django/settings/development.py
+Poll_Django/settings/production.py
